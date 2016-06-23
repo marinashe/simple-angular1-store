@@ -11,7 +11,13 @@
     <h1>
         My Awesome Store!
     </h1>
-    <div class="row">
+
+    <very-nice-panel
+            ng-show="!vm.loaded"
+            title="'Loading!!!'"
+            content="vm.loadingMessage"></very-nice-panel>
+
+    <div class="row" ng-show="vm.loaded">
 
         <div class="col-sm-8">
             <div class="panel panel-default">
@@ -36,12 +42,6 @@
 
 
     </div>
-
-    <very-nice-panel title="'shalom'" content="'yo yo yo'"></very-nice-panel>
-    <very-nice-panel title="'123213'" content="'yo yasdfdafadfao yo'"></very-nice-panel>
-    <very-nice-panel title="'shal23454235om'" content="'yoadfdafasf yo yo'"></very-nice-panel>
-    <very-nice-panel title="'454545'" content="'yo yo asfasdfadsf'"></very-nice-panel>
-    <very-nice-panel title="'sha44454lom'" content="'yasfodsdfdasfaf yo yo'"></very-nice-panel>
 
 </div>
 
