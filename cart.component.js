@@ -4,8 +4,8 @@ angular.module("store").component('cart', {
         items: '=',
     },
     controller: function CartController() {
-        // TODO: fix total()
-        this.total = () => 12345;
+        this.total = () =>  this.items.reduce(
+            (prev, current) => prev + current.product.price * current.amount, 0)
     }
 });
 

@@ -12,13 +12,18 @@ m.controller('StoreCtrl', function StoreCtrl($http) {
         this.loadingMessage = "Something went terribly wrong. sorry."
     });
 
-    this.cart = [
+    this.cartItems = [
         // {product:this.inventory[0], amount: 1}
     ];
 
     this.addToCart = product => {
-        // TODO: check if id already exists
-        this.cart.push(
+        for (let p of this.cartItems) {
+            if (p.product.id === product.id) {
+                p.amount++;
+                return;
+            }
+        }
+        this.cartItems.push(
             {product: product, amount: 1}
         );
     };
