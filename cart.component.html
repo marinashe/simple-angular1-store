@@ -1,7 +1,9 @@
 <div class="panel panel-primary">
+
     <div class="panel-heading">
         <h3 class="panel-title">My Cart</h3>
     </div>
+
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="item in $ctrl.items">
             {{item.product.title}}
@@ -13,4 +15,5 @@
             Items: 0; Total: <b>{{$ctrl.total()|currency}}</b>
         </li>
     </ul>
+
 </div>
