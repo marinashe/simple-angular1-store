@@ -2,37 +2,6 @@
 
 var m = angular.module("store", []);
 
-
-m.component('veryNicePanel', {
-    template: `
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{$ctrl.title}}</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                   {{$ctrl.content}} 
-                </p>
-            </div>
-        </div>
-    `,
-    bindings: {
-        title: '=',
-        content: '=',
-    }
-});
-
-m.component('cart', {
-    templateUrl: "cart.component.html",
-    bindings: {
-        items: '=',
-    },
-    controller: function CartController () {
-        // TODO: fix total()
-        this.total = () => 12345;
-    }
-});
-
 m.controller('StoreCtrl', function () {
     this.inventory = [
         {id: '111', title: 'milk', price: 1.2},
