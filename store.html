@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <title>Our Store!!!</title>
+</head>
+<body>
+
+<div class="container" ng-controller="StoreCtrl">
+    <h1>
+        My Awesome Store!
+    </h1>
+    <div class="row">
+
+        <div class="col-sm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Inventory</h3>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="product in inventory">
+                        <button class="btn btn-success btn-xs"
+                        ng-click="addToCart(product)"><i class="glyphicon glyphicon-plus"></i></button>
+                        {{product.title}}
+                        <span class="badge">{{product.price|currency}}</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">My Cart</h3>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in cart">
+                        {{item.product.title}}
+                        {{item.product.price|currency}}
+                        X <input type="number" ng-model="item.amount" min="1" max="100">
+                        = {{item.product.price * item.amount|currency}}
+                    </li>
+                    <li class="list-group-item">
+                        Items: 0; Total: <b>$0.00</b>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="angular.js"></script>
+<script src="store.js"></script>
+
+</body>
+</html>
